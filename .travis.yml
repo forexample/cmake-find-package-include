@@ -1,0 +1,31 @@
+language:
+  - cpp
+
+sudo:
+  - required
+
+dist:
+  - xenial
+
+matrix:
+  include:
+
+    - os: linux
+      env: TYPE=system
+
+install:
+  - uname -a
+
+  - df -h $HOME
+
+  - wget --quiet https://github.com/ruslo/CMake/releases/download/v3.14.20190327-g6c366/cmake-3.14.20190327-g6c366-Linux-x86_64.tar.gz
+  - tar xf cmake-3.14.20190327-g6c366-Linux-x86_64.tar.gz
+  - export PATH="`pwd`/cmake-3.14.20190327-g6c366-Linux-x86_64/bin:${PATH}"
+
+script:
+  - which cmake
+  - cmake --version
+
+branches:
+  except:
+    - /^pr\..*/
