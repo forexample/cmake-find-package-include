@@ -1,4 +1,5 @@
 option(HUNTER_STATUS_DEBUG "..." ON)
+set(HUNTER_CONFIGURATION_TYPES Release CACHE STRING "...")
 
 include("${CMAKE_CURRENT_LIST_DIR}/HunterGate.cmake")
 
