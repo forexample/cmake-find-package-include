@@ -13,6 +13,9 @@ matrix:
     - os: linux
       env: TYPE=system
 
+    - os: linux
+      env: TYPE=externalproject
+
 install:
   - uname -a
 

@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+echo "Running 'system' test"
+
 set -x
 
 cmake -S . -B _builds/app
