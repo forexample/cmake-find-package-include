@@ -22,6 +22,9 @@ matrix:
     - os: linux
       env: TYPE=epsubdir
 
+    - os: linux
+      env: TYPE=fetch
+
 install:
   - uname -a
 
