@@ -1,0 +1,5 @@
+function(create_config_stub package)
+  set(stub_dir "${CMAKE_CURRENT_BINARY_DIR}/generated/pkg")
+  file(WRITE "${stub_dir}/${package}Config.cmake" "")
+  set(${package}_DIR ${stub_dir} PARENT_SCOPE)
+endfunction()
