@@ -25,6 +25,9 @@ matrix:
     - os: linux
       env: TYPE=fetch
 
+    - os: linux
+      env: TYPE=hunter
+
 install:
   - uname -a
 
