@@ -1,0 +1,6 @@
+[submodule "third_party/bar"]
+  path = third_party/bar
+  url = https://github.com/forexample/bar
+[submodule "third_party/foo"]
+  path = third_party/foo
+  url = https://github.com/forexample/foo
