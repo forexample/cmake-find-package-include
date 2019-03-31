@@ -20,11 +20,24 @@ install:
 
   - wget --quiet https://github.com/ruslo/CMake/releases/download/v3.14.20190327-g6c366/cmake-3.14.20190327-g6c366-Linux-x86_64.tar.gz
   - tar xf cmake-3.14.20190327-g6c366-Linux-x86_64.tar.gz
-  - export PATH="`pwd`/cmake-3.14.20190327-g6c366-Linux-x86_64/bin:${PATH}"
+  - sudo ln -s `pwd`/cmake-3.14.20190327-g6c366-Linux-x86_64/bin/cmake /home/travis/bin
+  - sudo ln -s `pwd`/cmake-3.14.20190327-g6c366-Linux-x86_64/bin/cmake /usr/bin
 
-script:
   - which cmake
   - cmake --version
+
+  - sudo which cmake
+  - sudo cmake --version
+
+  # Install system-wide
+  - cmake -S third_party/bar -B _builds/bar
+  - sudo cmake --build _builds/bar --target install
+
+  - cmake -S third_party/foo -B _builds/foo
+  - sudo cmake --build _builds/foo --target install
+
+script:
+  - ./run-test-${TYPE}.sh
 
 branches:
   except:
