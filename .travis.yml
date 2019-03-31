@@ -36,6 +36,10 @@ install:
   - cmake -S third_party/foo -B _builds/foo
   - sudo cmake --build _builds/foo --target install
 
+  # Install local
+  - cmake -S EP -B _builds/EP -DCMAKE_INSTALL_PREFIX=/home/travis/__EP_root
+  - cmake --build _builds/EP
+
 script:
   - ./run-test-${TYPE}.sh
 
